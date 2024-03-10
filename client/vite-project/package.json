@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.25.0",
+    "@tanstack/react-query-devtools": "^5.25.0",
+    "chess.js": "^1.0.0-beta.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

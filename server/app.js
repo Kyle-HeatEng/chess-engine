@@ -1,7 +1,10 @@
+import cors from "cors";
 import express from "express";
 import { chessRouter } from "./chess/Chess.js";
 import { port } from "./config.js";
 const app = express();
+
+app.use(cors())
 
 app.use(express.json());
 

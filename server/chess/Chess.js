@@ -13,9 +13,8 @@ import { Router } from 'express';
 
 
 export const chessRouter = Router()
-  .post("/init", (req, res) => {
+  .post("/", (req, res) => {
     const chess = new Chess();
-
     return res.json({
       chessboard: {
         board: chess.ascii(),
@@ -26,11 +25,13 @@ export const chessRouter = Router()
     });
 
   })
-  .post("/move", (req, res) => {
-    const { chessboard, move } = req.body;
+  .post("/:move", (req, res) => {
+    const { chessboard, moves } = req.body;
+
+    
 
     const chess = new Chess(chessboard.fen);
-    
+
     chess.move(move);
 
     return res.json({
